@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Accountant</title>
+        <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+        <style>
+            .navbar-menu { margin-left: 30px; }
+            .navbar-header {text-align: center;}
+            .main-content {margin-right: 20%;}
+            body {overflow: hidden;}
+        </style>
+    </head>
+    <body>
+        <div class="off-canvas off-canvas-sidebar-show">
+            <div class="off-canvas-sidebar pl-2">
+                <div class="navbar-header">
+                    <h1>sidebar</h1>
+                </div>
+                <div class="navbar-menu">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href=".">Saldo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=".">Zakup</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=".">Sprzedaz</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="off-canvas-content" style="overflow-y: auto;">        
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

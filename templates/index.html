@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-content"></div>
+   <h1>Kontownik</h1>
+   <div>
+      <div>
+      Stan konta: {{ manager.balance }}
+      </div>
+      <div>
+      Produkty w magazynie:
+      {% for product in manager.stock %}
+         <br>{{ product }}: {{ manager.stock[product] }}
+      {% endfor %}
+      </div>
+   </div>
+   <h2>Saldo</h2>
+   <form method="POST" action="">
+      <input type="hidden" name="command" value="saldo" />
+      <div class="form-group">
+         <label class="form-label">Ilość: </label>
+         <input type="text" name="amount" placeholder="Wpisz ilość">
+      </div>
+      <div class="form-group">
+         <label class="form-label">Komentarz: </label>
+         <input type="text" name="comment" placeholder="Napisz komentarz">
+      </div>
+      <div class="form-group">
+         <button type="submit">Uaktualnij</button>
+      </div>
+   </form>
+
+   <h2>Zakup</h2>
+
+   <form method="POST" action="">
+      <input type="hidden" name="command" value="zakup" />
+      <div class="form-group">
+         <label class="form-label">Nazwa produktu</label>
+         <input type="text" name="id" placeholder="Podaj produkt" />
+      </div>
+      <div class="form-group">
+         <label class="form-label">Cena jednostkowa</label>
+         <input type="text" name="price" placeholder="Podaj cenę" />
+      </div>
+      <div class="form-group">
+         <label class="form-label">Ilość sztuk</label>
+         <input type="text" name="amount" placeholder="Podaj ilość" />
+      <div class="form-group">
+         <button type="submit">Uaktualnij</button>
+      </div>
+   </form>
+
+   <h2>Sprzedaż</h2>
+
+   <form method="POST" action="">
+      <input type="hidden" name="command" value="sprzedaz" />
+      <div class="form-group">
+         <label class="form-label">Nazwa produktu</label>
+         <input type="text" name="id" placeholder="Podaj produkt" />
+      </div>
+      <div class="form-group">
+         <label class="form-label">Cena jednostkowa</label>
+         <input type="text" name="price" placeholder="Podaj cenę" />
+      </div>
+      <div class="form-group">
+         <label class="form-label">Ilość sztuk</label>
+         <input type="text" name="amount" placeholder="Podaj ilość" />
+      </div>
+      <div class="form-group">
+         <button type="submit">Uaktualnij</button>
+      </div>
+   </form>
+</div>
+{% endblock %}

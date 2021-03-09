@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Saldo</h1>
+
+Balance: {{ manager.balance }}
+
+<form method="POST">
+    <div>
+        <label>Kwota do wpłaty/wypłaty</label>
+        <input type="text" name="saldo" placeholder="Podaj kwotę" />
+    </div>
+    <div>
+        <label>Komentarz</label>
+        <input type="text" name="comment" placeholder="Wpisz komentarz" />
+    </div>
+    <div>
+        <button type="submit">Uaktualnij</button>
+    </div>
+</form>
+{% endblock %}

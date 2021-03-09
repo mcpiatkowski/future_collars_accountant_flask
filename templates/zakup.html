@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Zakup</h1>
+
+Balance: {{ manager.balance }}
+
+<form method="POST">
+    <div>
+        <label>Nazwa produktu</label>
+        <input type="text" name="id" placeholder="Podaj produkt" />
+    </div>
+        <label>Cena jednostkowa</label>
+        <input type="text" name="price" placeholder="Podaj cenę" />
+    <div>
+    </div>
+        <label>Ilość sztuk</label>
+        <input type="text" name="amount" placeholder="Podaj ilość" />
+    <div>
+        <button type="submit">Uaktualnij</button>
+    </div>
+</form>
+{% endblock %}
